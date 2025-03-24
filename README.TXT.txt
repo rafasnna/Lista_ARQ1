@@ -1,0 +1,1 @@
+Ola theldo, nos logisim pedi ajuda da iza pra compreender e como fazer! então tem bastante logica da parte dela! estou buscando melhorar :(
