@@ -1,1 +1,1 @@
-Ola theldo, nos logisim pedi ajuda da iza pra compreender e como fazer! então tem bastante logica da parte dela! estou buscando melhorar :(
+30/03/2025: Ainda estou com algumas dificuldades de entender, mas estou pegando o jeito com karnaugh agora só falta pegar o jeito com verilog, o logisim precisei de ajuda

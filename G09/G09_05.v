@@ -1,0 +1,62 @@
+#! /usr/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x640528662d50 .scope module, "Guia_09_05" "Guia_09_05" 2 9;
+ .timescale 0 0;
+v0x6405286ac8c0_0 .net "clk", 0 0, v0x6405286647b0_0;  1 drivers
+v0x6405286ac9b0_0 .net "p5", 0 0, v0x6405286ac7c0_0;  1 drivers
+S_0x640528662ee0 .scope module, "CLK1" "clock" 2 12, 3 2 0, S_0x640528662d50;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "clk";
+v0x6405286647b0_0 .var "clk", 0 0;
+S_0x6405286ac580 .scope module, "P1" "pulse5" 2 13, 2 3 0, S_0x640528662d50;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "signal";
+    .port_info 1 /INPUT 1 "clk";
+v0x640528664ba0_0 .net "clk", 0 0, v0x6405286647b0_0;  alias, 1 drivers
+v0x6405286ac7c0_0 .var "signal", 0 0;
+E_0x64052869d520 .event posedge, v0x6405286647b0_0;
+    .scope S_0x640528662ee0;
+T_0 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x6405286647b0_0, 0, 1;
+    %end;
+    .thread T_0;
+    .scope S_0x640528662ee0;
+T_1 ;
+    %delay 12, 0;
+    %load/vec4 v0x6405286647b0_0;
+    %inv;
+    %store/vec4 v0x6405286647b0_0, 0, 1;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_0x6405286ac580;
+T_2 ;
+    %wait E_0x64052869d520;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x6405286ac7c0_0, 0, 1;
+    %delay 3, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x6405286ac7c0_0, 0, 1;
+    %jmp T_2;
+    .thread T_2;
+    .scope S_0x640528662d50;
+T_3 ;
+    %vpi_call 2 15 "$dumpfile", "Guia_09_05.vcd" {0 0 0};
+    %vpi_call 2 16 "$dumpvars", 32'sb00000000000000000000000000000001, v0x6405286ac8c0_0, v0x6405286ac9b0_0 {0 0 0};
+    %delay 120, 0;
+    %vpi_call 2 17 "$finish" {0 0 0};
+    %end;
+    .thread T_3;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "Guia_09_05.v";
+    "./clock.v";
